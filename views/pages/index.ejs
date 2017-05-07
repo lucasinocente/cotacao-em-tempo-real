@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <% include ../partials/header.ejs %>
+
 </head>
 
 <body>
 
-  <h1>Cotação Agora</h1>
-  <img src="images/cotacao-agora-logo.png" alt="">
-  <p>Cotação em tempo real de dólar, euro e libra.</p>
+	<header class="text-center">
+	  <h1 class="hidden">Cotação Agora</h1>
+	  <img src="images/cotacao-agora-logo.png" alt="">
+	  <p>Cotação em tempo real de dólar, euro e libra.</p>
+	</header>
+
+	<article>
+		<div class="container">
+			<div class="col-md-4">
+				<h2>Dólar Americano</h2>
+				<img src="https://s3-sa-east-1.amazonaws.com/beecambioimages/currency-flags/USD.png" alt="Dólar Americano">
+				<p>UU$ 1,00 - R$ 3,05</p>
+				<p><small>Fonte: <a href="http://www.federalreserve.gov" title="Fonte - http://www.federalreserve.gov">federalreserve.gov</a></small></p>
+			</div>
+			<div class="col-md-4">
+				
+				<h2>Euro</a></h2>
+				<img src="https://s3-sa-east-1.amazonaws.com/beecambioimages/currency-flags/EUR.png" alt="Euro">
+				<p>€ 1,00 - R$ 4,05</p>
+				<p><small>Fonte: <a href="http://www.ecb.eu" title="Fonte - http://www.ecb.eu">ecb.eu</a></small></p>
+
+			</div>
+			<div class="col-md-4">
+				
+				<h2>Libra Esterlina</a></h2>
+				<img src="https://s3-sa-east-1.amazonaws.com/beecambioimages/currency-flags/GBP.png" alt="Libra Esterlina">
+				<p>€ 1,00 - R$ 3,75</p>
+				<p><small>Fonte: <a href="http://www.bankofengland.co.uk" title="Fonte - http://www.bankofengland.co.uk">bankofengland.co.uk</a></small></p>
+
+			</div>
+		</div>
+	</article>
+
+
+  <% include ../partials/footer.ejs %>
 
 </body>
 </html>
