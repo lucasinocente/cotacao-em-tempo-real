@@ -1,0 +1,8 @@
+{
+  "name": "Cotação agora",
+  "description": "Cotação em tempo real de dólar, euro e libra.",
+  "repository": "https://github.com/lucassanchez/cotacao-em-tempo-real",
+  "logo": "http://i.imgur.com/ZJr9XzY.png",
+  "keywords": ["cotação", "dolar", "euro", "libra"],
+  "image": "heroku/nodejs"
+}
