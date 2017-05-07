@@ -1,4 +1,4 @@
-# cotacao-em-tempo-real
+# Cotação Agora
 Cotação em tempo real de dólar, euro e libra.
 
 ## To install
@@ -12,3 +12,6 @@ https://github.com/lucassanchez/cotacao-em-tempo-real
 
 ## Heroku
 https://cotacao-agora.herokuapp.com/
+
+## Refs links
+- https://devcenter.heroku.com/articles/getting-started-with-nodejs
