@@ -1,9 +1,14 @@
 var express = require('express');
 var app = express();
 
+// Set the port for use of the app
 app.set('port', (process.env.PORT || 5000));
 
+// Use /public for public files
 app.use(express.static(__dirname + '/public'));
+
+// redirect CSS bootstrap
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); 
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
