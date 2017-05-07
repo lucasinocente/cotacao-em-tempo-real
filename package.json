@@ -1,5 +1,5 @@
 {
-  "name": "Cotação Agora",
+  "name": "cotacao-agora",
   "version": "0.0.1",
   "description": "Cotação em tempo real de dólar, euro e libra.",
   "engines": {
@@ -18,9 +18,9 @@
     "url": "https://github.com/lucassanchez/cotacao-em-tempo-real"
   },
   "keywords": [
-    "cotação", 
-    "dolar", 
-    "euro", 
+    "cotação",
+    "dolar",
+    "euro",
     "libra"
   ],
   "license": "MIT"
