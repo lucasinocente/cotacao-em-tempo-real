@@ -12,4 +12,11 @@ angular.module('cotacaoAgora.controllers', []).
       });
     }
 
-});
+    var cotacaoLive = $interval(function(){
+      this.loadCotacaoAPI();
+      console.log('leu')
+    }.bind(this), 10000);
+
+    this.loadCotacaoAPI();
+
+  });
