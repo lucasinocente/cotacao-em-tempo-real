@@ -8,27 +8,67 @@
 
 <body ng-app="cotacaoAgora">
 
-	<header>
-		<div class="text-center">
-		  <h1 class="hidden">Cotação Agora</h1>
-		  <img src="images/cotacao-agora-logo.png" alt="">
-		  <p>Cotação em tempo real de dólar, euro e libra.</p>
-	  </div>
-	</header>
+  <div class="container">
 
-	<article id="cotacao" ng-controller="cotacaoController as cotacao">
-		<div class="container">
+  	<br>
 
-			<div class="col-md-4" ng-repeat="moeda in cotacao.moedas">
-				<h2>
-					<img src="https://s3-sa-east-1.amazonaws.com/beecambioimages/currency-flags/{{ moeda.currencyObj.abbreviation }}.png" alt="{{ moeda.currencyObj.name }}"> {{ moeda.currencyObj.name }}
-				</h2>
-				<h3>{{ moeda.currencyObj.acronym }} 1,00 - R$ {{ moeda.total_value / moeda.quantity | number:2 }}</h3>
-				<p><small>Fonte: <a href="{{ moeda.currencyObj.website }}" title="Fonte - {{ moeda.currencyObj.website }}">{{ moeda.currencyObj.website }}</a></small></p>
+		<header>
+			<nav class="navbar navbar-default">
+			  <div class="navbar-header">
+			    <a class="navbar-brand" href="#">
+			      Cotação Agora
+			    </a>
+			  </div>
+			  <p class="navbar-text">Cotação em tempo real de dólar, euro e libra.</p>
+			</nav>
+		</header>
+
+		<article id="cotacao" ng-controller="cotacaoController">
+		
+			<div class="row">
+
+				<div class="col-md-4" ng-repeat="moeda in moedas">
+					<div class="panel panel-default">
+					  <div class="panel-heading">
+					  	<h3 class="panel-title">
+					  		<img src="https://s3-sa-east-1.amazonaws.com/beecambioimages/currency-flags/{{ moeda.currencyObj.abbreviation }}.png" alt="{{ moeda.currencyObj.name }}">
+					  		{{ moeda.currencyObj.name }}
+					  	</h3>
+					  </div>
+					  <div class="panel-body">
+					    <p>{{ moeda.currencyObj.acronym }} 1.00 - R$ {{ moeda.total_value / moeda.quantity | number:2 }}</p>
+					  </div>
+					  <div class="panel-footer">
+					  	<small>Fonte: <a href="{{ moeda.currencyObj.website }}" title="Fonte - {{ moeda.currencyObj.website }}">{{ moeda.currencyObj.website }}</a></small>
+					  </div>
+					</div>
+				</div>
+
 			</div>
 
-		</div>
-	</article>
+			<div class="well well-sm text-center">Atualizado a cada 10 segundos. Última atualização: {{ lastAPILoad | date: 'mediumTime' }}</div>
+
+		</article>
+
+		<hr>
+
+		<article id="newsletter">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h5>Assine nossa newsletter e receba uma cotação diária:</h5>
+						<form id="newsletter" ng-submit="">
+						  <div class="form-group">
+						    <input type="email" class="form-control" id="email" placeholder="Seu e-mail">
+						  </div>
+						  <input type="submit" value="Enviar" class="btn btn-primary pull-right">
+						</form>
+					</div>
+				</div>
+			</div>
+		</article>
+
+	</div>	
 
   <% include ../partials/footer.ejs %>
 

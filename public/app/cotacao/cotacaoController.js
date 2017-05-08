@@ -1,9 +1,15 @@
-angular.module('cotacaoAgora', []).controller('cotacaoController', function($scope, $http) {
+angular.module('cotacaoAgora.controllers', []).
+  controller('cotacaoController', function($scope, cotacaoAPIservice, $interval) {
 
-  $http.get('https://demo3643409.mockable.io/quotations').then(function(res){
-    $scope.cotacao.moedas = res.data.result;
-  });
+    $scope.moedas = [];
 
-  console.log('$scope.cotacao.moedas', $scope.cotacao.moedas);
+    this.loadCotacaoAPI = function() {
+      cotacaoAPIservice.getMoedas().then(function (response) {
+
+        $scope.moedas      = response.data.result;
+        $scope.lastAPILoad = new Date();
+
+      });
+    }
 
 });
