@@ -18,17 +18,17 @@
 
 	<article id="cotacao" ng-controller="cotacaoController as cotacao">
 		<div class="container">
-			<div class="col-md-4" ng-repeat="moeda in cotacao.moedas">
 
-				<h2>{{ moeda.currencyObj.name }}</h2>
-				<img src="https://s3-sa-east-1.amazonaws.com/beecambioimages/currency-flags/{{ moeda.currencyObj.abbreviation }}.png" alt="{{ moeda.currencyObj.name }}">
-				<p>{{ moeda.currencyObj.acronym }} 1,00 - R$ 3,05</p>
+			<div class="col-md-4" ng-repeat="moeda in cotacao.moedas">
+				<h2>
+					<img src="https://s3-sa-east-1.amazonaws.com/beecambioimages/currency-flags/{{ moeda.currencyObj.abbreviation }}.png" alt="{{ moeda.currencyObj.name }}"> {{ moeda.currencyObj.name }}
+				</h2>
+				<h3>{{ moeda.currencyObj.acronym }} 1,00 - R$ {{ moeda.total_value / moeda.quantity | number:2 }}</h3>
 				<p><small>Fonte: <a href="{{ moeda.currencyObj.website }}" title="Fonte - {{ moeda.currencyObj.website }}">{{ moeda.currencyObj.website }}</a></small></p>
 			</div>
 
 		</div>
 	</article>
-
 
   <% include ../partials/footer.ejs %>
 
