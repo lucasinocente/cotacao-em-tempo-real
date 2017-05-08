@@ -1,6 +1,6 @@
 angular.module('cotacaoAgora', []).controller('cotacaoController', function($scope, $http) {
 
-  $http.get('http://demo3643409.mockable.io/quotations').then(function(res){
+  $http.get('https://demo3643409.mockable.io/quotations').then(function(res){
     $scope.cotacao.moedas = res.data.result;
   });
 
