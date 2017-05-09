@@ -52,20 +52,47 @@
 
 		<hr>
 
-		<article id="newsletter">
-			<div class="col-md-6 col-md-offset-3">
+		<article id="newsletter" ng-controller="newsletterController">
+
+			<div class="col-md-8 col-md-offset-2">
+
 				<div class="panel panel-default">
 					<div class="panel-body">
+						
 						<h5>Assine nossa newsletter e receba uma cotação diária:</h5>
-						<form id="newsletter" ng-submit="">
+						
+						<form id="newsletter" ng-submit="signUpNewsletter()">
 						  <div class="form-group">
-						    <input type="email" class="form-control" id="email" placeholder="Seu e-mail">
+						    <input type="name" ng-model="newsletterData.name" class="form-control" id="name" name="name" placeholder="Seu nome" required>
 						  </div>
-						  <input type="submit" value="Enviar" class="btn btn-primary pull-right">
+							<div class="form-group">
+						    <input type="email" ng-model="newsletterData.email" class="form-control" id="email" name="email" placeholder="Seu e-mail" required>
+						  </div>
+						  <button type="submit" ng-class="{ 'disabled': signUpNewsletterSending }" class="btn btn-primary btn-block pull-right">Quero saber das novidades!</button>
 						</form>
+
 					</div>
 				</div>
+
+				<!-- Avisos da newsletter -->
+
+				<div class="alert alert-info" ng-show="signUpNewsletterSending" role="alert">
+					Enviando {{ newsletterData.name }}, por favor aguarde...
+				</div>
+
+				<div class="alert alert-success" ng-show="signUpNewsletterSuccess" role="alert">
+					Sucesso {{ newsletterData.name }}! Obrigado por cadastrar seu e-mail!
+				</div>
+
+				<div class="alert alert-danger" ng-show="signUpNewsletterError" role="alert">
+					{{ newsletterData.name }}, algo deu errado. Tente novamente mais tarde.
+				</div>
+
+				<!-- // Avisos da newsletter -->
+
 			</div>
+
+
 		</article>
 
 	</div>	

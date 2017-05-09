@@ -1,4 +1,6 @@
 angular.module('cotacaoAgora', [
-  'cotacaoAgora.controllers',
-  'cotacaoAgora.services'
+  'cotacao.controllers',
+  'cotacao.services',
+  'newsletter.controllers',
+  'newsletter.services'
 ]);
